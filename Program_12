@@ -1,0 +1,101 @@
+//Given a file of N employee records with a set K of Keys(4-digits) which uniquely determine the records in file F.
+//Assume that file F is maintained in memory by a Hash Table(HT) of m memory locations with L as the set of memory address
+(2-digit) of locations in HT. Let the keys in K and address in L are Integers. Design and develop a 
+Program in C that uses Hash Function H: K ®L as H(K)=K mod m (remainder method), and implement hashing technique to map given key K to the address space
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int key,n,m,*ht,hi,elec,flag;
+
+void createht()
+{
+      int i;
+      ht=(int*)malloc(m*sizeof(int));
+      if(m==0)
+      {
+            printf("unable to create hash table\n");
+            exit(0);
+      }
+      else
+      {
+            for(i=0;i<m;i++)
+            ht[i]=-1;
+      }
+}
+
+void insertht(int key)
+{
+      hi=key%m;
+      while(ht[hi]!=-1)
+      {
+            hi=(hi+1)%m;
+            flag=1;
+      }
+      if(flag)
+      {
+              printf("collission detected and avoid by linear probing\n");
+              flag=0;
+       }
+       ht[hi]=key;
+       elec++;
+ }
+ 
+ void displayht()
+ {
+      int i;
+      if(elec==0)
+      {
+            printf("Hash table is empty\n");
+            return;
+       }
+  }
+  
+  void main()
+  {
+          int i;
+          printf("Enter the number of employee records\n");
+          scanf("%d",&n);
+          printf("Enter the two digit memory locations:\n");
+          scanf("%d",&m);
+          createht();
+          printf("Enter the four digit key values of employee records :\n");
+          for(i=0;i<n;i++)
+          {
+                scanf("%d",&key);
+                if(elec==m)
+                {
+                      printf("Hash table is full\n"); 
+                      break;
+                }
+                insertht(key);
+           }
+           displayht();
+    }
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+              
+       
