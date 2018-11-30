@@ -56,7 +56,8 @@ NODE* insert_rear(int cf,int x,int y,int z,NODE *head)
 	temp->px=x;
 	temp->py=y;
 	temp->pz=z;
-	cur=head->link;while(cur->link!=head)
+	cur=head->link;
+	while(cur->link!=head)
 	{
 		cur=cur->link;
 	}
