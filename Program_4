@@ -83,12 +83,6 @@ void convert()
 	      }
 		
 
-
-
-
-
-
-
 void precidence()
 {
 	switch(symb)
@@ -112,3 +106,6 @@ int empty()
 	else
 	return FALSE;
 }
+
+/*
+OUTPUT:
