@@ -84,3 +84,6 @@ void main()
 	ax=evaluate();
 	printf("ans=%d\n",ax);
 }
+
+/*
+OUTPUT:
